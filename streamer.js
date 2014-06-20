@@ -8,7 +8,7 @@ var intervalTimerObj;
 
 function startImageStream(sockets) {
 	if(!intervalTimerObj) {
-			intervalTimerObj = setInterval(updateStream , 1000);
+			intervalTimerObj = setInterval(function() { updateStream(sockets); }  , 1000);
 		}
 }
 exports.startImageStream = startImageStream;
@@ -21,7 +21,7 @@ function stopImageStream() {
 exports.stopImageStream = stopImageStream;
 
 
-function updateStream(){
+function updateStream(sockets){
 	raspcam.takePictureQuick();
 	fs.readFile( __dirname + "/pic.jpg", function(err, image) {
 		if(err) {
