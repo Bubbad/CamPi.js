@@ -1,20 +1,14 @@
+#CamPi.js
 
-
-# Socket
-
-
-
-## Usage
+A Node.js project for controlling and streaming raspberry pi camera images via the Web.
 
 
 
-## Developing
 
-
-
-### Tools
+### 
+Tools
 
 Created with [Nodeclipse](https://github.com/Nodeclipse/nodeclipse-1)
- ([Eclipse Marketplace](http://marketplace.eclipse.org/content/nodeclipse), [site](http://www.nodeclipse.org))   
+ 
+([Eclipse Marketplace](http://marketplace.eclipse.org/content/nodeclipse), [site](http://www.nodeclipse.org))   
 
-Nodeclipse is free open-source project that grows with your contributions.
