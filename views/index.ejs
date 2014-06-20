@@ -1,18 +1,40 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
 
-  </head>
+  <% include header %>
+  <% include navbar %>
+
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-    <p id="msg"></p>
-    <img id="img" />
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <h3>View</h3>
+            <li><label for="CameraChkBtn">Camera</span><input id="CameraChkBtn" type="checkbox" /></li>
+            <li><label for="CameraChkBtn">Camera</span><input id="CameraChkBtn" type="checkbox" /></li>
+            <li><label for="CameraChkBtn">Camera</span><input id="CameraChkBtn" type="checkbox" /></li>
+            <hr />
+
+            <h3>Options</h3>
+            <li><label for="CameraChkBtn">Camera</span><input id="CameraChkBtn" type="checkbox" /></li>
+            <li><label for="CameraChkBtn">Camera</span><input id="CameraChkBtn" type="checkbox" /></li>
+            <li><label for="CameraChkBtn">Camera</span><input id="CameraChkBtn" type="checkbox" /></li>
+            <hr />
+          </ul>
+        </div>
+
+        <div class="col-md-10 col-md-offset-2 main">
+          <p id="msg"></p>
+          <img id="img" class="image-view"/>
+        </div>
+      </div>
+    </div>
+
+    
 
     <script src="http://code.jquery.com/jquery.min.js"></script>
     <script src="/socket.io/socket.io.js" type="text/javascript"></script>
     <script src="/chat.js" type="text/javascript" ></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
   </body>
 </html>

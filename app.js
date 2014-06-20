@@ -24,9 +24,10 @@ app.use(express.methodOverride());
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.get("/", routes.index);
 
 var server = http.createServer(app).listen(app.get('port'), function(){
-  logger.logInfo('Express server listening on port ' + app.get('port'));
+	logger.logInfo('Express server listening on port ' + app.get('port'));
 });
 
 var io = require("socket.io").listen(server);
