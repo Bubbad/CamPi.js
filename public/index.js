@@ -51,15 +51,15 @@ function drawChart(cpuData) {
 }
 
 $(document).ready(function() {
-    $("#stopBtn").click( function() {
+    $("#runningBtn").click( function() {
         socket.emit("option", {running: true});
     });
 
-    $("#recordBtn").click( function() {
+    $("#recordingBtn").click( function() {
         socket.emit("option", {recording: true});
     });
 
-    $("#nBtn").click( function() {
+    $("#nightBtn").click( function() {
         socket.emit("option", {night: true});
     });
 });

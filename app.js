@@ -6,7 +6,7 @@ var path 	= require('path');
 var app 	= express();
 
 var logger = require("./logger.js");
-var streamer = require("./streamer.js");
+var streamer = require("./cameraStreamer.js");
 var cpuinfo = require("./cpuInfoStreamer.js");
 var routes	= require('./routes');
 
@@ -38,8 +38,6 @@ var io = require("socket.io").listen(server);
 io.sockets.on("connection", function(socket) {
 	logger.logInfo("User connected");
 	clients.push(socket);
-
-	logger.logDebug("deb");
 
 	streamer.startStream(clients, options);
 	cpuinfo.startStream(clients);
