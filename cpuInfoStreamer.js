@@ -22,7 +22,7 @@ function stopStream() {
 exports.stopStream = stopStream;
 
 function updateStream(sockets) {
-	exec("ps au | tail -n+2", function(error, stdout, stderr) {
+	exec("top -bn1i | tail -n+8", function(error, stdout, stderr) {
 			if(error && error.code != 1) {
 				throw error;
 			}
@@ -36,12 +36,12 @@ function updateStream(sockets) {
 				var lineWords = line.match(/\S+/gi);
 
 				if(lineWords && lineWords.length > 7){
-					if(lineWords[10].indexOf("node") > -1|| lineWords[10].indexOf("raspistill") > -1) {
-						nodeCpu["cpu"] = +nodeCpu["cpu"] + +lineWords[2] ;
-						nodeCpu["mem"] = +nodeCpu["mem"] + +lineWords[3] ;
+					if(lineWords[11].indexOf("node") > -1|| lineWords[11].indexOf("raspistill") > -1) {
+						nodeCpu["cpu"] = +nodeCpu["cpu"] + +lineWords[8] ;
+						nodeCpu["mem"] = +nodeCpu["mem"] + +lineWords[9] ;
 					} else {
-						otherCpu["cpu"] = +otherCpu["cpu"] + +lineWords[2] ;
-						otherCpu["mem"] = +otherCpu["mem"] + +lineWords[3] ;
+						otherCpu["cpu"] = +otherCpu["cpu"] + +lineWords[8] ;
+						otherCpu["mem"] = +otherCpu["mem"] + +lineWords[9] ;
 					}
 				}
 			});

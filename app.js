@@ -13,7 +13,7 @@ var routes	= require('./routes');
 /* VARIABLES */
 var clients = [];
 var port = 3000;
-var options = {running: true, recording: false, night: false, width: 640, height: 480, quality: 10};
+var options = {running: true, recording: false, night: false, width: 640, height: 480, quality: 90};
 var optionsFunctions = [];
 
 

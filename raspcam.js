@@ -12,7 +12,7 @@ function takePictureQuick() {
 	exec("raspistill --nopreview -w 640 -h 480 -q 10 -o " + __dirname + "/pic.jpg -t 100 -th 0:0:0", function(error, stdout, stderr) {
 		if(error) {
 			logger.logSevere("Error executing bash command");
-			throw error;
+			//throw error;
 		}
 	});
 }
