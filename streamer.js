@@ -6,19 +6,20 @@ var raspcam = require("./raspcam.js");
 var intervalTimerObj;
 
 
-function startImageStream(sockets) {
+function startStream(sockets, options) {
 	if(!intervalTimerObj) {
-			intervalTimerObj = setInterval(function() { updateStream(sockets); }  , 1000);
-		}
+		setOptions(options);
+		intervalTimerObj = setInterval(function() { updateStream(sockets); }  , 1000);
+	}
 }
-exports.startImageStream = startImageStream;
+exports.startStream = startStream;
 
 
-function stopImageStream() {
+function stopStream() {
 	clearInterval(intervalTimerObj);
 	intervalTimerObj = undefined;
 }
-exports.stopImageStream = stopImageStream;
+exports.stopStream = stopStream;
 
 
 function updateStream(sockets){
@@ -35,3 +36,8 @@ function updateStream(sockets){
 		});
 	});	
 }
+
+function setOptions(options) {
+	raspcam.setOptions(options);
+}
+exports.setOptions = setOptions;

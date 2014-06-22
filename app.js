@@ -13,6 +13,8 @@ var routes	= require('./routes');
 /* VARIABLES */
 var clients = [];
 var port = 3000;
+var options = {running: true, recording: false, night: false, width: 640, height: 480, quality: 10};
+var optionsFunctions = [];
 
 
 app.set('port', process.env.PORT || port);
@@ -37,7 +39,7 @@ io.sockets.on("connection", function(socket) {
 	logger.logInfo("User connected");
 	clients.push(socket);
 
-	streamer.startImageStream(clients);
+	streamer.startStream(clients, options);
 	cpuinfo.startStream(clients);
 
 	socket.on("disconnect", function() {
@@ -50,12 +52,39 @@ io.sockets.on("connection", function(socket) {
 
 		if(clients.length == 0) {
 			logger.logInfo("All users disconnected, stopping camera");
-			streamer.stopImageStream();
+			streamer.stopStream();
 			cpuinfo.stopStream();
 		}
-	})
+	});
+
+	socket.on("option", function(data) {
+		logger.logInfo("Option change received: " + data);
+		Object.keys(data).forEach(function(key) {
+			if(data[key] == true) {
+				options[key] = !options[key];
+				if(typeof optionsFunctions[key] === "function") {
+					optionsFunctions[key]();
+				} else {
+					optionsFunctions["options"](options);
+				}
+			}
+		});
+
+		clients.forEach(function(socket) {
+			socket.emit("options", {running: options.running, recording: options.recording, night: options.night});
+		});
+	});
 });
 
+optionsFunctions["running"] = function() {
+	if(options.running == true) {
+		streamer.startStream(clients, options);
+	} else {
+		streamer.stopStream();
+	}
+}
+
+optionsFunctions["options"] = streamer.setOptions;
 
 
 
