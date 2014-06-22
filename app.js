@@ -7,6 +7,7 @@ var app 	= express();
 
 var logger = require("./logger.js");
 var streamer = require("./streamer.js");
+var cpuinfo = require("./cpuInfoStreamer.js");
 var routes	= require('./routes');
 
 /* VARIABLES */
@@ -36,8 +37,8 @@ io.sockets.on("connection", function(socket) {
 	logger.logInfo("User connected");
 	clients.push(socket);
 
-	socket.emit("connected", {message: "hello"});
 	streamer.startImageStream(clients);
+	cpuinfo.startStream(clients);
 
 	socket.on("disconnect", function() {
 		logger.logInfo("User disconnected");
@@ -50,6 +51,7 @@ io.sockets.on("connection", function(socket) {
 		if(clients.length == 0) {
 			logger.logInfo("All users disconnected, stopping camera");
 			streamer.stopImageStream();
+			cpuinfo.stopStream();
 		}
 	})
 });

@@ -3,40 +3,34 @@ window.onload = function() {
 
 	var socket = io.connect("http://eharr.servegame.com:3000");
 
-	socket.on("connected", function(data) {
-		if(data.message) {
-			$("#msg").text(data.message);
-		}
+	socket.on("image", function(data) {
+        $("#img").attr("src", "data:image/gif;base64," + data);
 	});
 
-	socket.on("image", function(data) {
-		
-		$("#img").attr("src", "data:image/gif;base64," + data);
-		
-	});
+    socket.on("cpu", function(data) {
+        drawChart(data);
+    });
 }
 
 
-	google.load("visualization", "1", {packages:["corechart"]});
-      google.setOnLoadCallback(drawChart);
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-          ['Task', 'Hours per Day'],
-          ['CamPi.js',     11],
-          ['Idle',      87],
-          ['Other',      2]
-        ]);
+google.load("visualization", "1", {packages:["corechart"]});
+//google.setOnLoadCallback(drawChart);
 
-        var options = {
-          title: 'My Daily Activities',
-          chartArea:{left:20,top:51},
-          colors:["red","blue","yellow"]
-        };
+function drawChart(cpuData) {
+    var data = google.visualization.arrayToDataTable([
+      ['Task', 'CPU Usage'],
+      ['CamPi.js',  cpuData.node.cpu],
+      ['Idle',      cpuData.idle.cpu],
+      ['Other',     cpuData.other.cpu]
+    ]);
 
-        var chart = new google.visualization.PieChart(document.getElementById('CPUChart'));
-        chart.draw(data, options);
+    var options = {
+      title: 'CPU usage',
+      chartArea:{left:0,top:51},
+      colors:["red","blue","yellow"]
+    };
 
-        var chart2 = new google.visualization.PieChart(document.getElementById('CPUChart2'));
-        chart2.draw(data, options);
-      }
+    var chart = new google.visualization.PieChart(document.getElementById('CPUChart'));
+    chart.draw(data, options);
+}
   

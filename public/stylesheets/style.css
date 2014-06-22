@@ -1,10 +1,9 @@
 
 .sidebar {
-	position: fixed;
+
 	top: 51px;
 	bottom: 0;
 	left: 0;
-	z-index: 1000;
 	display: block;
 	padding: 20px;
 	overflow-x: hidden;
@@ -21,11 +20,13 @@
 
 
 .main .page-header {
-  margin-top: 0;
+  margin-top: 0px;
 }
 
 .main {
 	margin-left: 0px;
+	margin-top: 50px;
+	padding: 20px;
 }
 
 
@@ -36,9 +37,10 @@
 
 
 
-.sidebar ul label {
+.sidebar ul button {
 	font-size:18px;
-	padding-top: 8px;
+	margin-top: 11px;
+	width: 80%;
 }
 
 .sidebar ul input {
