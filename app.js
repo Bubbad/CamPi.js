@@ -85,6 +85,3 @@ optionsFunctions["running"] = function() {
 }
 
 optionsFunctions["options"] = streamer.setOptions;
-
-
-
