@@ -64,3 +64,18 @@ $(document).ready(function() {
     });
 });
   
+
+$("#qualitySlider").slider();
+$("#qualitySlider").on("slide", function(slideEvent) {
+    $("#qualitySliderValue").text(slideEvent.value);
+});
+
+$("#heightSlider").slider();
+$("#heightSlider").on("slide", function(slideEvent) {
+    $("#heightSliderValue").text(slideEvent.value);
+});
+
+$("#widthSlider").slider();
+$("#widthSlider").on("slide", function(slideEvent) {
+    $("#widthSliderValue").text(slideEvent.value);
+});

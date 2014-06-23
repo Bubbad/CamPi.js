@@ -8,6 +8,7 @@ var intervalTimerObj;
 
 function startStream(sockets, options) {
 	if(!intervalTimerObj) {
+			raspcam.takePictureQuick();
 		setOptions(options);
 		intervalTimerObj = setInterval(function() { updateStream(sockets); }  , 1000);
 	}
@@ -18,12 +19,13 @@ exports.startStream = startStream;
 function stopStream() {
 	clearInterval(intervalTimerObj);
 	intervalTimerObj = undefined;
+	raspcam.stopAll();
 }
 exports.stopStream = stopStream;
 
 
 function updateStream(sockets){
-	raspcam.takePictureQuick();
+
 	fs.readFile( __dirname + "/pic.jpg", function(err, image) {
 		if(err) {
 			logSevere("Error loading image.");

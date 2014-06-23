@@ -47,11 +47,19 @@
 	width: 80%;
 }
 
+.sidebar ul li span { 
+	margin-left: 20px;
+}
 
 
-#CPUChart, #CPUChart2{
+
+#CPUChart{
 	margin-top:51px;
 	 width:500px;
 	 height:300px;
+}
+
+.sidebarHeaderText {
+	margin-left: 10%;
 }
 
