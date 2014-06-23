@@ -13,7 +13,7 @@ var routes	= require('./routes');
 /* VARIABLES */
 var clients = [];
 var port = 3000;
-var options = {running: true, recording: false, night: false, width: 640, height: 480, quality: 90};
+var options = {running: true, recording: false, night: false, width: 640, height: 480, quality: 10};
 var optionsFunctions = [];
 
 
@@ -76,15 +76,14 @@ io.sockets.on("connection", function(socket) {
 		});
 
 		logger.logInfo("Updating options");
+		streamer.setOptionsString(options);
 	});
 });
 
 optionsFunctions["running"] = function() {
-	if(options.running == true) {
-		streamer.startStream(clients, options);
-	} else {
+	if(options.running == false) {
 		streamer.stopStream();
-	}
+	} 
 }
 
 optionsFunctions["options"] = streamer.setOptionsString;
