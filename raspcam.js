@@ -17,6 +17,7 @@ exports.takePictureQuick = takePictureQuick;
 
 
 function takePicture() {
+	logger.logInfo("Options are now:" + options);
 	exec("raspistill --nopreview " + options +" -o " + __dirname + "/pic.jpg -t 9999999 -tl 1000 -th 0:0:0", function(error, stdout, stderr) {
 		logger.logInfo("Stopped camera");
 	});
@@ -41,7 +42,7 @@ function setOptionsString(newOptions) {
 	Object.keys(newOptions).forEach(function(key) {
 		switch(key) {
 			case "night":
-				if(key === true) {
+				if(newOptions[key] === true) {
 					optionsString += "-ex night ";
 				}
 				break;

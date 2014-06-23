@@ -42,6 +42,8 @@ io.sockets.on("connection", function(socket) {
 	streamer.startStream(clients, options);
 	cpuinfo.startStream(clients);
 
+	socket.emit("options", options);
+
 	socket.on("disconnect", function() {
 		logger.logInfo("User disconnected");
 
@@ -58,32 +60,31 @@ io.sockets.on("connection", function(socket) {
 
 	socket.on("option", function(data) {
 		Object.keys(data).forEach(function(key) {
-			if(data[key] == true) {
-				options[key] = !options[key];
-				
-			}
 
+			options[key] = data[key];
 			if(typeof optionsFunctions[key] === "function") {
 				optionsFunctions[key]();
 			} else {
+				logger.logInfo("Updating options");
 				optionsFunctions["options"](options);
-				options[key] = data[key];
-			}
+			}	
+
+			
 		});
 
+		streamer.setOptionsString(options);
 		clients.forEach(function(socket) {
 			socket.emit("options", options);
 		});
-
-		logger.logInfo("Updating options");
-		streamer.setOptionsString(options);
 	});
 });
 
 optionsFunctions["running"] = function() {
 	if(options.running == false) {
 		streamer.stopStream();
-	} 
+	} else {
+		streamer.startStream(clients, options);
+	}
 }
 
 optionsFunctions["options"] = streamer.setOptionsString;

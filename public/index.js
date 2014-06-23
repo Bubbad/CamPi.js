@@ -14,19 +14,27 @@ window.onload = function() {
     });
 
     socket.on("options", function(data) {
-        Object.keys(data).forEach(function(key) {
-            var label = $("#" + key + "Btn");
-            if(data[key] === true) {
-                label.removeClass("btn-danger");
-                label.addClass("btn-success");
-            } else {
-                label.addClass("btn-danger");
-                label.removeClass("btn-success");
-            }
-        });
+        updateOptionButtonClass("runningBtn", data.running);
+        updateOptionButtonClass("recordingBtn", data.recording);
+        updateOptionButtonClass("nightBtn", data.night);
+        $("#qualitySliderValue").text(data.quality);
+        $("#widthSliderValue").text(data.width);
+        $("#heightSliderValue").text(data.height);
 
         console.log(data);
     });
+}
+
+function updateOptionButtonClass(btnId, boolean) {
+    var label = $("#" + btnId);
+    if(boolean === true) {
+        label.removeClass("btn-danger");
+        label.addClass("btn-success");
+        console.log("here");
+    } else {
+        label.addClass("btn-danger");
+        label.removeClass("btn-success");
+    }
 }
 
 
@@ -52,18 +60,20 @@ function drawChart(cpuData) {
 
 $(document).ready(function() {
     $("#runningBtn").click( function() {
-        socket.emit("option", {running: true});
+        var newOption = $("#runningBtn").hasClass("btn-danger");
+        socket.emit("option", {running: newOption});
     });
 
     $("#recordingBtn").click( function() {
-        socket.emit("option", {recording: true});
+        var newOption = $("#recordingBtn").hasClass("btn-danger");
+        socket.emit("option", {recording: newOption});
     });
 
     $("#nightBtn").click( function() {
-        socket.emit("option", {night: true});
+        var newOption = $("#nightBtn").hasClass("btn-danger");
+        socket.emit("option", {night: newOption});
     });
 });
-  
 
 $("#qualitySlider").slider();
 $("#qualitySlider").on("slide", function(slideEvent) {
