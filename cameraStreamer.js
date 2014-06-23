@@ -9,7 +9,7 @@ var intervalTimerObj;
 function startStream(sockets, options) {
 	if(!intervalTimerObj) {
 			raspcam.takePictureQuick();
-		setOptions(options);
+		setOptionsString(options);
 		intervalTimerObj = setInterval(function() { updateStream(sockets); }  , 1000);
 	}
 }
@@ -39,7 +39,7 @@ function updateStream(sockets){
 	});	
 }
 
-function setOptions(options) {
-	raspcam.setOptions(options);
+function setOptionsString(options) {
+	raspcam.setOptionsString(options);
 }
-exports.setOptions = setOptions;
+exports.setOptionsString = setOptionsString;

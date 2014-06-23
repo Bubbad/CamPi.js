@@ -60,17 +60,22 @@ io.sockets.on("connection", function(socket) {
 		Object.keys(data).forEach(function(key) {
 			if(data[key] == true) {
 				options[key] = !options[key];
-				if(typeof optionsFunctions[key] === "function") {
-					optionsFunctions[key]();
-				} else {
-					optionsFunctions["options"](options);
-				}
+				
+			}
+
+			if(typeof optionsFunctions[key] === "function") {
+				optionsFunctions[key]();
+			} else {
+				optionsFunctions["options"](options);
+				options[key] = data[key];
 			}
 		});
 
 		clients.forEach(function(socket) {
-			socket.emit("options", {running: options.running, recording: options.recording, night: options.night});
+			socket.emit("options", options);
 		});
+
+		logger.logInfo("Updating options");
 	});
 });
 
@@ -82,4 +87,4 @@ optionsFunctions["running"] = function() {
 	}
 }
 
-optionsFunctions["options"] = streamer.setOptions;
+optionsFunctions["options"] = streamer.setOptionsString;

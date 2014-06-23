@@ -39,7 +39,7 @@ function stopAll() {
 exports.stopAll = stopAll;
 
 
-function setOptions(options) {
+function setOptionsString(options) {
 	var optionsString = "";
 
 
@@ -66,4 +66,4 @@ function setOptions(options) {
 
 	options = optionsString;
 }
-exports.setOptions = setOptions;
+exports.setOptionsString = setOptionsString;

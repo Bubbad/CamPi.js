@@ -69,13 +69,22 @@ $("#qualitySlider").slider();
 $("#qualitySlider").on("slide", function(slideEvent) {
     $("#qualitySliderValue").text(slideEvent.value);
 });
+$("#qualitySlider").on("slideStop", function(slideEvent) {
+    socket.emit("option", {quality: slideEvent.value});
+});
 
 $("#heightSlider").slider();
 $("#heightSlider").on("slide", function(slideEvent) {
     $("#heightSliderValue").text(slideEvent.value);
 });
+$("#heightSlider").on("slideStop", function(slideEvent) {
+    socket.emit("option", {height: slideEvent.value});
+});
 
 $("#widthSlider").slider();
 $("#widthSlider").on("slide", function(slideEvent) {
     $("#widthSliderValue").text(slideEvent.value);
+});
+$("#widthSlider").on("slideStop", function(slideEvent) {
+    socket.emit("option", {width: slideEvent.value});
 });
