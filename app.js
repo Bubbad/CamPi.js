@@ -60,18 +60,10 @@ io.sockets.on("connection", function(socket) {
 
 	socket.on("option", function(data) {
 		Object.keys(data).forEach(function(key) {
-
 			options[key] = data[key];
-			if(typeof optionsFunctions[key] === "function") {
-				optionsFunctions[key]();
-			} else {
-				logger.logInfo("Updating options");
-				optionsFunctions["options"](options);
-			}	
-
-			
 		});
 
+		optionsFunctions["running"]();
 		streamer.setOptionsString(options);
 		clients.forEach(function(socket) {
 			socket.emit("options", options);

@@ -10,6 +10,10 @@ var options = "-w 640 -h 480 -q 10";
 /* FUNCTIONS */
 function takePictureQuick() {
 	exec("raspistill --nopreview -w 640 -h 480 -q 10 -o " + __dirname + "/pic.jpg -t 9999999 -tl 1000 -th 0:0:0", function(error, stdout, stderr) {
+		if(error) {
+			logger.logSevere(error);
+		}
+
 		logger.logInfo("Stopped camera");
 	});
 }
@@ -19,6 +23,10 @@ exports.takePictureQuick = takePictureQuick;
 function takePicture() {
 	logger.logInfo("Options are now:" + options);
 	exec("raspistill --nopreview " + options +" -o " + __dirname + "/pic.jpg -t 9999999 -tl 1000 -th 0:0:0", function(error, stdout, stderr) {
+		if(error) {
+			logger.logSevere(error);
+		}
+
 		logger.logInfo("Stopped camera");
 	});
 }
