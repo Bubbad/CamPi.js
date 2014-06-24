@@ -6,8 +6,9 @@ window.onload = function() {
 	socket = io.connect("http://eharr.servegame.com:3000");
 
 	socket.on("image", function(data) {
-        $("#img").attr("src", "data:image/gif;base64," + data);
-	});
+        var base64Image = arrayBufferToBase64(data);
+        $("#img").attr('src',"data:image/gif;base64," +  base64Image);
+    });
 
     socket.on("cpu", function(data) {
         drawChart(data);
@@ -23,6 +24,15 @@ window.onload = function() {
 
         console.log(data);
     });
+}
+
+function arrayBufferToBase64(imageBuffer) {
+    var base64Binary = ''
+    var bytes = new Uint8Array(imageBuffer);
+    for (var i = 0; i < bytes.byteLength; i++) {
+        base64Binary += String.fromCharCode(bytes[i]);
+    }
+    return window.btoa(base64Binary);
 }
 
 function updateOptionButtonClass(btnId, boolean) {

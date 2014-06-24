@@ -32,10 +32,9 @@ function updateStream(sockets){
 		if(err) {
 			logSevere("Error loading image.");
 		}
-		var base64img = new Buffer(image).toString("base64");
-
+		
 		sockets.forEach(function(socket) {
-			socket.emit("image", base64img);
+			socket.emit("image", image);
 		});
 	});	
 }
