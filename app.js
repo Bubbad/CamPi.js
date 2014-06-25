@@ -16,11 +16,10 @@ var port = 3000;
 var options = {running: true, recording: false, night: false, width: 640, height: 480, quality: 10};
 var optionsFunctions = [];
 
-
+app.use(express.favicon(__dirname + '/public/images/rasbpi.ico'));
 app.set('port', process.env.PORT || port);
 app.set('views', __dirname + '/views'); 
 app.set('view engine', 'ejs'); 			
-app.use(express.favicon());
 app.use(express.bodyParser());
 app.use(express.methodOverride());
 app.use(app.router);

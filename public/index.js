@@ -60,6 +60,7 @@ function drawChart(cpuData) {
 
     var options = {
       title: 'CPU usage',
+      backgroundColor:"#f5f5f5",
       chartArea:{left:0,top:61},
       colors:["red","blue","yellow"]
     };
