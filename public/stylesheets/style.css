@@ -82,9 +82,13 @@ html, body {
 
 
 #CPUChart{
-	margin-top:51px;
 	width:300px;
 	height:200px;
+}
+
+.bars {
+	margin-top: 51px;
+	margin-bottom: 100px;
 }
 
 .sidebarHeaderText {

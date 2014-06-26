@@ -15,9 +15,14 @@ window.onload = function() {
     });
 
     socket.on("options", function(data) {
-        updateOptionButtonClass("runningBtn", data.running);
+        updateOptionButtonClass("runningBtn",   data.running);
         updateOptionButtonClass("recordingBtn", data.recording);
-        updateOptionButtonClass("nightBtn", data.night);
+        updateOptionButtonClass("nightBtn",     data.night);
+
+        $("#qualitySlider").slider("setValue",  data.quality ,  false);
+        $("#widthSlider").slider("setValue",    data.width ,    false);
+        $("#heightSlider").slider("setValue",   data.height ,   false);
+
         $("#qualitySliderValue").text(data.quality);
         $("#widthSliderValue").text(data.width);
         $("#heightSliderValue").text(data.height);

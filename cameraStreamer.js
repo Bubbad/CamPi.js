@@ -27,11 +27,13 @@ function stopStream() {
 	intervalTimerObj = undefined;
 	raspcam.stopAll();
 	running = false;
+	stopRecording();
 }
 exports.stopStream = stopStream;
 
 
 function updateStream(sockets){
+
 
 	fs.readFile( __dirname + "/pic.jpg", function(err, image) {
 		if(err) {
@@ -45,7 +47,7 @@ function updateStream(sockets){
 		if(recording === true) {
 			fs.writeFile(recordingsDir + "/pic" + padZeros(recordingIndex, 5) + ".jpg", image, function(error) {
 				if(error) {
-					logger.logSevere(error);
+					logger.logSevere("updateStream: " + error);
 				}
 
 				recordingIndex++;

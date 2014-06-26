@@ -35,7 +35,8 @@ var server = http.createServer(app).listen(app.get('port'), function(){
 var io = require("socket.io").listen(server);
 
 io.sockets.on("connection", function(socket) {
-	logger.logInfo("User connected");
+	var clientAddress = socket.handshake.address;
+	logger.logInfo("User subscribed to camera feed: " + clientAddress.address + ":" + clientAddress.port);
 	clients.push(socket);
 
 	streamer.startStream(clients, options);
@@ -61,10 +62,10 @@ io.sockets.on("connection", function(socket) {
 		Object.keys(data).forEach(function(key) {
 			options[key] = data[key];
 		});
-
-
+		
+		optionsFunctions["running"](data);
 		optionsFunctions["recording"](data);
-		optionsFunctions["running"]();
+
 		streamer.setOptionsString(options);
 		clients.forEach(function(socket) {
 			socket.emit("options", options);
@@ -73,11 +74,15 @@ io.sockets.on("connection", function(socket) {
 	});
 });
 
-optionsFunctions["running"] = function() {
-	if(options.running == false) {
-		streamer.stopStream();
-	} else {
-		streamer.startStream(clients, options);
+optionsFunctions["running"] = function(data) {
+	if(data["running"] != undefined) {
+		if(data.running == false) {
+			logger.logInfo("Stopping camera");
+			streamer.stopStream();
+		} else {
+			logger.logInfo("Starting camera");
+			streamer.startStream(clients, options);
+		}
 	}
 }
 

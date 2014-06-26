@@ -1,8 +1,9 @@
-
+var logger = require("../logger");
 /*
  * GET home page.
  */
 
 exports.index = function(req, res){
-  res.render('index', { title: 'CamPi.js' });
+	logger.logRequest(req);
+	res.render('index', { title: 'CamPi.js' });
 };
