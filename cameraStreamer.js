@@ -35,7 +35,7 @@ function updateStream(sockets){
 
 	fs.readFile( __dirname + "/pic.jpg", function(err, image) {
 		if(err) {
-			logSevere("Error loading image.");
+			logger.logSevere("Error loading image.");
 		}
 		
 		sockets.forEach(function(socket) {
@@ -72,7 +72,7 @@ function startRecording() {
 							+ padZeros(date.getUTCHours(), 2) + ":" 
 							+ padZeros(date.getUTCMinutes(), 2) + ":"
 							+ padZeros(date.getUTCSeconds(), 2);
-							
+
 	fs.exists(__dirname + "/recordings", function(exists) {
 		if(!exists) {
 			fs.mkdir(__dirname + "/recordings");
