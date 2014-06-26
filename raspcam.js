@@ -3,7 +3,7 @@
 var exec 	= require("child_process").exec;
 var logger 	= require("./logger.js");
 
-var options = "-w 640 -h 480 -q 10";
+var options = "-w 640 -h 480 -q 10 " + "-o " + __dirname + "/pic.jpg ";
 
 /* VARIABLES */
 
@@ -17,7 +17,7 @@ exports.takePictureQuick = takePictureQuick;
 
 
 function takePicture() {
-	exec("raspistill --nopreview " + options +" -o " + __dirname + "/pic.jpg -t 9999999 -tl 1000 -th 0:0:0", function(error, stdout, stderr) {
+	exec("raspistill --nopreview " + options +" -t 9999999 -tl 1000 -th 0:0:0", function(error, stdout, stderr) {
 		if(error) {
 			if(("" + error).indexOf("mmal") > -1) {
 				stopAll();

@@ -62,11 +62,14 @@ io.sockets.on("connection", function(socket) {
 			options[key] = data[key];
 		});
 
+
+		optionsFunctions["recording"](data);
 		optionsFunctions["running"]();
 		streamer.setOptionsString(options);
 		clients.forEach(function(socket) {
 			socket.emit("options", options);
 		});
+
 	});
 });
 
@@ -75,6 +78,18 @@ optionsFunctions["running"] = function() {
 		streamer.stopStream();
 	} else {
 		streamer.startStream(clients, options);
+	}
+}
+
+optionsFunctions["recording"] = function(data) {
+	if(data["recording"] != undefined) {
+		if(data.recording == true) {
+			logger.logInfo("Starting recording");
+			streamer.startRecording();
+		} else {
+			logger.logInfo("Stopping recording");
+			streamer.stopRecording();
+		}		
 	}
 }
 
