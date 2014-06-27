@@ -40,15 +40,17 @@ var io = require("socket.io").listen(server);
 
 io.sockets.on("connection", function(socket) {
 	var clientAddress = socket.request.connection.remoteAddress;
-	logger.logInfo("User subscribed to camera feed: " + clientAddress);
-	clients.push(socket);
 
-	clientAddress = null;
+	socket.on("camerafeed", function() {
+		
+		logger.logInfo("User subscribed to camera feed: " + clientAddress);
+		clients.push(socket);
 
-	streamer.startStream(clients, options);
-	cpuinfo.startStream(clients);
+		streamer.startStream(clients, options);
+		cpuinfo.startStream(clients);
 
-	socket.emit("options", options);
+		socket.emit("options", options);
+	});
 
 	socket.on("disconnect", function() {
 		logger.logInfo("User disconnected");
@@ -77,6 +79,16 @@ io.sockets.on("connection", function(socket) {
 			socket.emit("options", options);
 		});
 
+	});
+
+	socket.on("recordingsListRequest", function() {
+		logger.logInfo("User fetched recordings list: " + clientAddress);
+		streamer.sendRecordingsList(socket);
+	});
+
+	socket.on("recordingsRequest", function(data) {
+		logger.logInfo("User subscribed to recordings feed: " + clientAddress);
+		streamer.sendRecording(socket, data);
 	});
 });
 

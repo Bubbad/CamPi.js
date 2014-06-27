@@ -1,13 +1,22 @@
 {
-  "name": "CamPi.js",
-  "version": "0.0.1",
-  "private": true,
-  "scripts": {
-    "start": "node app.js"
-  },
-  "dependencies": {
-    "express": "3.2.6",
-    "ejs": "*",
-    "socket.io": "latest"
-  }
+    "name": "CamPi",
+    "version": "0.1.0",
+    "description" : "A node.js project for controlling and streaming raspberry camera via the Web.",
+    "keywords" : ["Raspberry pi", "Camera", "Web"],
+    "homepage" : "https://github.com/Bubbad/CamPi.js",
+    "license" : "MIT",
+    "author" : {
+        "name" : "Johan Nilsson Hansen", 
+        "email" : "granen@hotmail.com", 
+        "url" : "https://github.com/Bubbad"
+    },
+    "repository" : { 
+        "type" : "git", 
+        "url" : "https://github.com/Bubbad/CamPi.js.git"
+      }
+    "dependencies": {
+        "express": "3.2.6",
+        "ejs": "*",
+        "socket.io": "latest"
+    }
 }

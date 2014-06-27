@@ -1,8 +1,9 @@
 
-var memwatch= require('memwatch');
 var fs 		= require("fs");
 var raspcam = require("./raspcam.js");
 var logger 	= require("./logger.js");
+
+var recordingsPath = __dirname + "/recordings/";
 
 var intervalTimerObj;
 var running = false;
@@ -71,7 +72,7 @@ exports.setOptionsString = setOptionsString;
 
 function startRecording() {
 	var date = new Date();
-	var dirName = __dirname + "/recordings/" 
+	var dirName = recordingsPath + 
 							+ date.getUTCFullYear() + "-" 
 							+ padZeros(date.getUTCMonth(), 2) + "-" 
 							+ padZeros(date.getUTCDay(),2 ) + "_" 
@@ -98,6 +99,23 @@ function stopRecording() {
 	recordingsDir = undefined;
 }
 exports.stopRecording = stopRecording;
+
+
+function sendRecordingsList(socket) {
+	fs.readdir(recordingsPath, function(error, files) {
+		if(error) {
+			logger.logSevere("getAllRecordings:" + error);
+		}
+
+		socket.emit("recordingsListResponse", files);
+	});
+}
+exports.sendRecordingsList = sendRecordingsList;
+
+function sendRecordings(socket, data) {
+
+}
+exports.sendRecordings = sendRecordings;
 
 
 function padZeros(num, size) {

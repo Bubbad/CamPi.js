@@ -60,8 +60,10 @@ exports.startStream = startStream;
 
 
 function stopStream() {	
-	spawnTimer.kill();
-	spawnTimer = undefined;
+	if(spawnTimer) {
+		spawnTimer.kill();
+		spawnTimer = undefined;		
+	}
 }
 exports.stopStream = stopStream;
 

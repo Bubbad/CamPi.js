@@ -5,6 +5,8 @@ window.onload = function() {
 
 	socket = io.connect("http://eharr.servegame.com:3000");
 
+    socket.emit("camerafeed", "");
+
 	socket.on("image", function(data) {
         var base64Image = arrayBufferToBase64(data);
         $("#img").attr('src',"data:image/gif;base64," +  base64Image);

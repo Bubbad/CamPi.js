@@ -1,25 +1,32 @@
 
+var fs = require("fs");
+var os = require('os');
+
 /* VARIABLES */
 var debug = false;
+var logFile = "access.log";
 
 /* FUNCTIONS */
 function logInfo(message) {
-	var infoMessage = "[INFO] " + message;
+	var infoMessage = "[INFO] " + getDateString() + message;
 	console.log(infoMessage);
+	logToFile(infoMessage);
 }
 exports.logInfo = logInfo;
 
 function logSevere(message) {
-	var severeMessage = "[SEVERE] " + message;
+	var severeMessage = "[SEVERE] " + getDateString() + message;
 	console.log(severeMessage);
+	logToFile(severeMessage);
 	console.trace();
 }
 exports.logSevere = logSevere;
 
 function logDebug(message) {
 	if(debug === true) {
-		var debugMessage = "[DEBUG] " + message;
-		console.log(debugMessage);		
+		var debugMessage = "[DEBUG] " + getDateString() + message;
+		console.log(debugMessage);	
+		logToFile(debugMessage);	
 	}
 }
 exports.logDebug = logDebug;
@@ -34,3 +41,26 @@ function setDebug(active) {
 	debug = active;
 }
 exports.setDebug = setDebug;
+
+function logToFile(message) {
+	fs.appendFile(__dirname + "/" + logFile, message + os.EOL, function(error) {
+		if(error) {
+			logger.logSevere("logToFile: " + error);
+		}
+	});
+}
+
+function getDateString() {
+	var date = new Date();
+	return			  	date.getUTCFullYear() 				+ "-" 
+						+ padZeros(date.getUTCMonth(), 	2) 	+ "-" 
+						+ padZeros(date.getUTCDay(), 	2) 	+ "_" 
+						+ padZeros(date.getUTCHours(), 	2) 	+ ":" 
+						+ padZeros(date.getUTCMinutes(),2) 	+ ":"
+						+ padZeros(date.getUTCSeconds(),2)	+ " ";
+}
+
+function padZeros(num, size) {
+    var s = "000000000" + num;
+    return s.substr(s.length-size);
+}
