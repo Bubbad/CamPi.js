@@ -12,6 +12,7 @@ exports.logInfo = logInfo;
 function logSevere(message) {
 	var severeMessage = "[SEVERE] " + message;
 	console.log(severeMessage);
+	console.trace();
 }
 exports.logSevere = logSevere;
 

@@ -5,10 +5,12 @@ var http 	= require('http');
 var path 	= require('path');
 var app 	= express();
 
-var logger = require("./logger.js");
-var streamer = require("./cameraStreamer.js");
-var cpuinfo = require("./cpuInfoStreamer.js");
-var routes	= require('./routes');
+var logger 		= require("./logger.js");
+var streamer 	= require("./cameraStreamer.js");
+var cpuinfo 	= require("./cpuInfoStreamer.js");
+var routesIndex	= require('./routes');
+var routesRec	= require('./routes/recordings.js');
+var routesAbout	= require('./routes/about.js');
 
 /* VARIABLES */
 var clients = [];
@@ -25,7 +27,9 @@ app.use(express.methodOverride());
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.get("/", routes.index);
+app.get("/", routesIndex.index);
+app.get("/recordings", routesRec.index);
+app.get("/about", routesAbout.index);
 
 var server = http.createServer(app).listen(app.get('port'), function(){
 	logger.logInfo('Express server listening on port ' + app.get('port'));
@@ -35,9 +39,11 @@ var server = http.createServer(app).listen(app.get('port'), function(){
 var io = require("socket.io").listen(server);
 
 io.sockets.on("connection", function(socket) {
-	var clientAddress = socket.handshake.address;
-	logger.logInfo("User subscribed to camera feed: " + clientAddress.address + ":" + clientAddress.port);
+	var clientAddress = socket.request.connection.remoteAddress;
+	logger.logInfo("User subscribed to camera feed: " + clientAddress);
 	clients.push(socket);
+
+	clientAddress = null;
 
 	streamer.startStream(clients, options);
 	cpuinfo.startStream(clients);

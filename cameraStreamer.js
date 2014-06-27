@@ -1,5 +1,5 @@
 
-
+var memwatch= require('memwatch');
 var fs 		= require("fs");
 var raspcam = require("./raspcam.js");
 var logger 	= require("./logger.js");
@@ -12,18 +12,21 @@ var recordingsDir;
 var recordingIndex;
 
 
-function startStream(sockets, options) {
+function startStream(sockets) {
 	if(!intervalTimerObj) {
 		raspcam.takePicture();
 		running = true;
-		intervalTimerObj = setInterval(function() { updateStream(sockets); }  , 1000);
 	}
+	
+	clearTimeout(intervalTimerObj);
+	intervalTimerObj = setTimeout(updateStream, 1000, sockets);
+	
 }
 exports.startStream = startStream;
 
 
 function stopStream() {
-	clearInterval(intervalTimerObj);
+	clearTimeout(intervalTimerObj);
 	intervalTimerObj = undefined;
 	raspcam.stopAll();
 	running = false;
@@ -33,13 +36,11 @@ exports.stopStream = stopStream;
 
 
 function updateStream(sockets){
-
-
 	fs.readFile( __dirname + "/pic.jpg", function(err, image) {
 		if(err) {
 			logger.logSevere("Error loading image.");
 		}
-		
+
 		sockets.forEach(function(socket) {
 			socket.emit("image", image);
 		});
@@ -51,14 +52,17 @@ function updateStream(sockets){
 				}
 
 				recordingIndex++;
+				image = null;
 			});
 		}
-	});	
+
+		startStream(sockets);
+	});
 }
 
 function setOptionsString(options) {
 	raspcam.setOptionsString(options);
-	if(options[running] === true) {
+	if(options["running"] === true) {
 		raspcam.restart();		
 	} 
 }

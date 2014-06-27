@@ -27,7 +27,7 @@ function startStream(sockets) {
 			cpulist.forEach(function(line) {
 				var lineWords = line.match(/\S+/gi);
 
-				if(lineWords != undefined && lineWords.length > 7){
+				if(lineWords != undefined && lineWords.length > 11){
 					if(lineWords[11].indexOf("node") > -1|| lineWords[11].indexOf("raspistill") > -1) {
 						nodeCpu["cpu"] = +nodeCpu["cpu"] + +lineWords[8] ;
 						nodeCpu["mem"] = +nodeCpu["mem"] + +lineWords[9] ;

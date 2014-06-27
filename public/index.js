@@ -11,7 +11,8 @@ window.onload = function() {
     });
 
     socket.on("cpu", function(data) {
-        drawChart(data);
+        drawCPUChart(data);
+        drawRAMBar(data);
     });
 
     socket.on("options", function(data) {
@@ -55,7 +56,7 @@ function updateOptionButtonClass(btnId, boolean) {
 
 google.load("visualization", "1", {packages:["corechart"]});
 
-function drawChart(cpuData) {
+function drawCPUChart(cpuData) {
     var data = google.visualization.arrayToDataTable([
       ['Task', 'CPU Usage'],
       ['CamPi.js',  cpuData.node.cpu],
@@ -74,6 +75,12 @@ function drawChart(cpuData) {
 
     var chart = new google.visualization.PieChart(document.getElementById('CPUChart'));
     chart.draw(data, options);
+}
+
+function drawRAMBar(cpuData) {
+    $("#RAMIdle").css("height", cpuData.idle.mem + "%");
+    $("#RAMOther").css("height", cpuData.other.mem + "%");
+    $("#RAMNode").css("height", cpuData.node.mem + "%");
 }
 
 $(document).ready(function() {
