@@ -8,14 +8,14 @@ var logFile = "access.log";
 
 /* FUNCTIONS */
 function logInfo(message) {
-	var infoMessage = "[INFO] " + getDateString() + message;
+	var infoMessage = getDateString() + "[INFO] " + message;
 	console.log(infoMessage);
 	logToFile(infoMessage);
 }
 exports.logInfo = logInfo;
 
 function logSevere(message) {
-	var severeMessage = "[SEVERE] " + getDateString() + message;
+	var severeMessage = getDateString() + "[SEVERE] " +  message;
 	console.log(severeMessage);
 	console.trace();
 	logToFile(severeMessage);
@@ -25,7 +25,7 @@ exports.logSevere = logSevere;
 
 function logDebug(message) {
 	if(debug === true) {
-		var debugMessage = "[DEBUG] " + getDateString() + message;
+		var debugMessage = getDateString() + "[DEBUG] " + message;
 		console.log(debugMessage);	
 		logToFile(debugMessage);	
 	}
@@ -44,8 +44,9 @@ function setDebug(active) {
 exports.setDebug = setDebug;
 
 function logToFile(message) {
-	fs.appendFile(__dirname + "/" + logFile, message + os.EOL, function(error) {
+	fs.appendFile(__dirname + "/" + logFile, message + "\r\n", function(error) {
 		if(error) {
+			throw error;
 			logger.logSevere("logToFile: " + error);
 		}
 	});

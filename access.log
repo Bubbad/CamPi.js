@@ -1,84 +1,19 @@
-[INFO] 2014-05-06_12:28:25 Express server listening on port 3000
-[INFO] 2014-05-06_12:28:27 127.0.0.1 requested '/' User-agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36
-[INFO] 2014-05-06_12:28:31 127.0.0.1 requested '/recordings' User-agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36
-[INFO] 2014-05-06_13:34:12 Express server listening on port 3000
-[INFO] 2014-05-06_13:34:17 127.0.0.1 requested '/' User-agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36
-[INFO] 2014-05-06_13:34:25 127.0.0.1 requested '/recordings' User-agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36
-[INFO] 2014-05-06_13:34:26 127.0.0.1 requested '/' User-agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36
-[INFO] 2014-05-06_13:45:52 127.0.0.1 requested '/' User-agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36
-[INFO] 2014-05-06_13:45:57 127.0.0.1 requested '/' User-agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36
-[INFO] 2014-05-06_13:46:00 127.0.0.1 requested '/' User-agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36
-[INFO] 2014-05-06_13:46:07 127.0.0.1 requested '/' User-agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36
-[INFO] 2014-05-06_13:46:19 127.0.0.1 requested '/' User-agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36
-[INFO] 2014-05-06_13:47:24 127.0.0.1 requested '/' User-agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36
-[INFO] 2014-05-06_13:47:40 127.0.0.1 requested '/' User-agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36
-[INFO] 2014-05-06_13:47:42 127.0.0.1 requested '/about' User-agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36
-[INFO] 2014-05-06_13:48:27 127.0.0.1 requested '/about' User-agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36
-[INFO] 2014-05-06_13:48:39 127.0.0.1 requested '/about' User-agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36
-[INFO] 2014-05-06_13:48:46 Express server listening on port 3000
-[INFO] 2014-05-06_13:48:47 127.0.0.1 requested '/about' User-agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36
-[INFO] 2014-05-06_13:48:53 127.0.0.1 requested '/about' User-agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36
-[INFO] 2014-05-06_13:49:04 127.0.0.1 requested '/about' User-agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36
-[INFO] 2014-05-06_13:49:20 127.0.0.1 requested '/about' User-agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36
-[INFO] 2014-05-06_13:49:47 127.0.0.1 requested '/about' User-agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36
-[INFO] 2014-05-06_13:49:51 127.0.0.1 requested '/about' User-agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36
-[INFO] 2014-05-06_13:50:53 127.0.0.1 requested '/about' User-agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36
-[INFO] 2014-05-06_13:50:55 127.0.0.1 requested '/about' User-agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36
-[INFO] 2014-05-06_13:50:55 127.0.0.1 requested '/about' User-agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36
-[INFO] 2014-05-06_13:51:33 127.0.0.1 requested '/' User-agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36
-[INFO] 2014-05-06_13:53:07 127.0.0.1 requested '/' User-agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36
-[INFO] 2014-05-06_13:53:08 127.0.0.1 requested '/' User-agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36
-[INFO] 2014-05-06_13:53:09 127.0.0.1 requested '/' User-agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36
-[INFO] 2014-05-06_13:53:10 127.0.0.1 requested '/' User-agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36
-[INFO] 2014-05-06_13:53:10 127.0.0.1 requested '/' User-agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36
-[INFO] 2014-05-06_13:53:12 127.0.0.1 requested '/' User-agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36
-[INFO] 2014-05-06_13:53:36 127.0.0.1 requested '/' User-agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36
-[INFO] 2014-05-06_13:53:37 127.0.0.1 requested '/' User-agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36
-[INFO] 2014-05-06_13:53:41 127.0.0.1 requested '/' User-agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36
-[INFO] 2014-05-06_13:53:42 127.0.0.1 requested '/' User-agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36
-[INFO] 2014-05-06_13:54:04 127.0.0.1 requested '/' User-agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36
-[INFO] 2014-05-06_13:54:05 127.0.0.1 requested '/' User-agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36
-[INFO] 2014-05-06_13:54:46 127.0.0.1 requested '/' User-agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36
-[INFO] 2014-05-06_13:54:48 127.0.0.1 requested '/' User-agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36
-[INFO] 2014-05-06_13:54:56 127.0.0.1 requested '/' User-agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36
-[INFO] 2014-05-06_13:55:38 127.0.0.1 requested '/' User-agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36
-[INFO] 2014-05-06_13:55:40 127.0.0.1 requested '/' User-agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36
-[INFO] 2014-05-06_13:55:50 127.0.0.1 requested '/' User-agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36
-[INFO] 2014-05-06_13:55:52 127.0.0.1 requested '/' User-agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36
-[INFO] 2014-05-06_13:56:18 127.0.0.1 requested '/' User-agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36
-[INFO] 2014-05-06_13:57:21 127.0.0.1 requested '/' User-agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36
-[INFO] 2014-05-06_13:57:23 127.0.0.1 requested '/' User-agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36
-[INFO] 2014-05-06_13:57:43 127.0.0.1 requested '/' User-agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36
-[INFO] 2014-05-06_13:57:45 127.0.0.1 requested '/' User-agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36
-[INFO] 2014-05-06_13:57:51 127.0.0.1 requested '/' User-agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36
-[INFO] 2014-05-06_13:57:54 127.0.0.1 requested '/' User-agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36
-[INFO] 2014-05-06_13:59:17 127.0.0.1 requested '/' User-agent: Mozilla/5.0 (Windows NT 6.3; WOW64; Trident/7.0; MAMIJS; rv:11.0) like Gecko
-[INFO] 2014-05-06_13:59:19 127.0.0.1 requested '/' User-agent: Mozilla/5.0 (Windows NT 6.3; WOW64; Trident/7.0; MAMIJS; rv:11.0) like Gecko
-[INFO] 2014-05-06_14:01:05 127.0.0.1 requested '/recordings' User-agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36
-[INFO] 2014-05-06_14:01:15 127.0.0.1 requested '/' User-agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36
-[INFO] 2014-05-06_15:13:38 Express server listening on port 3000
-[INFO] 2014-05-06_15:13:47 127.0.0.1 requested '/' User-agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36
-[INFO] 2014-05-06_15:14:25 Express server listening on port 3000
-[INFO] 2014-05-06_15:14:42 127.0.0.1 requested '/recordings' User-agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36
-[INFO] 2014-05-06_15:15:08 127.0.0.1 requested '/recordings' User-agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36
-[INFO] 2014-05-06_15:16:15 127.0.0.1 requested '/recordings' User-agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36
-[INFO] 2014-05-06_15:24:53 127.0.0.1 requested '/recordings' User-agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36
-[INFO] 2014-05-06_15:25:13 127.0.0.1 requested '/recordings' User-agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36
-[INFO] 2014-05-06_15:25:27 127.0.0.1 requested '/recordings' User-agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36
-[INFO] 2014-05-06_15:25:49 127.0.0.1 requested '/recordings' User-agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36
-[INFO] 2014-05-06_15:26:12 127.0.0.1 requested '/recordings' User-agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36
-[INFO] 2014-05-06_15:27:18 127.0.0.1 requested '/recordings' User-agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36
-[INFO] 2014-05-06_15:27:54 127.0.0.1 requested '/recordings' User-agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36
-[INFO] 2014-05-06_15:28:59 127.0.0.1 requested '/recordings' User-agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36
-[INFO] 2014-05-06_15:30:05 127.0.0.1 requested '/recordings' User-agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36
-[INFO] 2014-05-06_15:30:25 127.0.0.1 requested '/recordings' User-agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36
-[INFO] 2014-05-06_15:30:48 127.0.0.1 requested '/recordings' User-agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36
-[INFO] 2014-05-06_15:31:18 127.0.0.1 requested '/recordings' User-agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36
-[INFO] 2014-05-06_15:32:34 127.0.0.1 requested '/recordings' User-agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36
-[INFO] 2014-05-06_15:33:33 127.0.0.1 requested '/recordings' User-agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36
-[INFO] 2014-05-06_15:33:55 127.0.0.1 requested '/' User-agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36
-[INFO] 2014-05-06_15:34:13 127.0.0.1 requested '/recordings' User-agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36
-[INFO] 2014-05-06_15:38:42 127.0.0.1 requested '/recordings' User-agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36
-[INFO] 2014-05-06_15:39:43 127.0.0.1 requested '/recordings' User-agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36
-[INFO] 2014-05-06_15:40:40 127.0.0.1 requested '/recordings' User-agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36
-[INFO] 2014-05-06_15:41:33 127.0.0.1 requested '/recordings' User-agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36
+2014-05-06_16:46:56 [INFO] 192.168.1.1 requested '/' User-agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36
+2014-05-06_16:46:57 [INFO] 192.168.1.1 disconnected
+2014-05-06_16:46:57 [INFO] All users disconnected, stopping camera
+2014-05-06_16:46:58 [INFO] 192.168.1.1 subscribed to camera feed
+2014-05-06_16:46:58 [INFO] 192.168.1.1 requested '/recordings' User-agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36
+2014-05-06_16:46:59 [INFO] 192.168.1.1 disconnected
+2014-05-06_16:46:59 [INFO] All users disconnected, stopping camera
+2014-05-06_16:46:59 [INFO] 192.168.1.1 fetched recordings list
+2014-05-06_16:47:01 [INFO] 192.168.1.1 requested '/' User-agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36
+2014-05-06_16:47:01 [INFO] 192.168.1.1 disconnected
+2014-05-06_16:47:01 [INFO] All users disconnected, stopping camera
+2014-05-06_16:47:02 [INFO] 192.168.1.1 subscribed to camera feed
+2014-05-06_16:47:35 [INFO] Stopping camera
+2014-05-06_16:47:37 [INFO] Starting camera
+2014-05-06_16:47:38 [INFO] Starting recording
+2014-05-06_16:47:41 [INFO] Stopping recording
+2014-05-06_16:47:41 [DEBUG] takePicture couldn't take picture. Trying again
+2014-05-06_16:48:01 [INFO] Stopping camera
+2014-05-06_16:48:03 [INFO] Starting camera

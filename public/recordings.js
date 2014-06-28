@@ -8,9 +8,13 @@ window.onload = function() {
     	data.forEach(function(record) {
     		var label = $("<label class='btn btn-danger'>" + record +"</label>");
             label.click(function() {
-                label.removeClass("btn-danger");
-                label.addClass("btn-success");
-                socket.emit("recordingsRequest", record);
+                if(label.hasClass("btn-danger")) {
+                    label.removeClass("btn-danger");
+                    label.addClass("btn-success");
+                    socket.emit("recordingsRequest", record);
+                } else {
+                    socket.emit("recordingsStopRequest", []);
+                }
             });
 
             var li = $("<li></li>");

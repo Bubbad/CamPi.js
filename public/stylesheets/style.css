@@ -66,6 +66,13 @@ html, body {
 	width: 80%;
 }
 
+.sidebar ul select {
+	font-size:18px;
+	margin-top: 11px;
+	width: 80%;
+	margin-left: 10%;
+}
+
 .sidebar ul button {
 	font-size:18px;
 	margin-top: 11px;

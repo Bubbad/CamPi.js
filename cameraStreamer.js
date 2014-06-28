@@ -12,7 +12,6 @@ var recording = false;
 var recordingsDir;
 var recordingIndex;
 
-
 function startStream(sockets) {
 	if(!intervalTimerObj) {
 		raspcam.takePicture();
@@ -53,7 +52,6 @@ function updateStream(sockets){
 				}
 
 				recordingIndex++;
-				image = null;
 			});
 		}
 
@@ -122,19 +120,23 @@ exports.sendRecording = sendRecording;
 
 function sendRecord(socket, imagePath, imagesNames, iteration) {
 	if(imagesNames.length > iteration && socket.connected != false) {
-		console.log(recordingsPath + imagePath + "/" + imagesNames[iteration]);
 		fs.readFile(recordingsPath + imagePath + "/" + imagesNames[iteration], function(error, image) {
 			if(error) {
-				console.log(error);
+				logger.logSevere("sendRecord error: " + error);
 			}
 			socket.emit("image", image);
-			setTimeout(sendRecord, 1000, socket,imagePath, imagesNames, iteration + 1);
+			socket["playback"] = setTimeout(sendRecord, 1000, socket,imagePath, imagesNames, iteration + 1);
 		});
 	} else {
-		socket.emit("recordingFinished", []);
+		sendRecordStop(socket);
 	}
 }
 
+function sendRecordStop(socket) {
+	clearTimeout(socket["playback"]);
+	socket.emit("recordingFinished", []);
+}
+exports.sendRecordStop = sendRecordStop;
 
 function padZeros(num, size) {
     var s = "000000000" + num;

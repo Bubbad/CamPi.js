@@ -43,7 +43,7 @@ io.sockets.on("connection", function(socket) {
 
 	socket.on("camerafeed", function() {
 		
-		logger.logInfo("User subscribed to camera feed: " + clientAddress);
+		logger.logInfo(clientAddress + " subscribed to camera feed");
 		clients.push(socket);
 
 		streamer.startStream(clients, options);
@@ -53,11 +53,11 @@ io.sockets.on("connection", function(socket) {
 	});
 
 	socket.on("disconnect", function() {
-		logger.logInfo("User disconnected");
+		logger.logInfo(clientAddress + " disconnected");
 
 		//Removes user
 		var i = clients.indexOf(socket);
-		clients.splice(i,i+1);
+		clients.splice(i,1);
 
 		if(clients.length == 0) {
 			logger.logInfo("All users disconnected, stopping camera");
@@ -89,6 +89,11 @@ io.sockets.on("connection", function(socket) {
 	socket.on("recordingsRequest", function(data) {
 		logger.logInfo(clientAddress + " requested recording: " + data);
 		streamer.sendRecording(socket, data);
+	});
+
+	socket.on("recordingsStopRequest", function() {
+		logger.logInfo(clientAddress + " stopped recording playback");
+		streamer.sendRecordStop(socket);
 	});
 });
 
