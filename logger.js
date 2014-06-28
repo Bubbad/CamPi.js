@@ -17,8 +17,9 @@ exports.logInfo = logInfo;
 function logSevere(message) {
 	var severeMessage = "[SEVERE] " + getDateString() + message;
 	console.log(severeMessage);
-	logToFile(severeMessage);
 	console.trace();
+	logToFile(severeMessage);
+	logToFile(console.trace());
 }
 exports.logSevere = logSevere;
 

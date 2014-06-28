@@ -82,12 +82,12 @@ io.sockets.on("connection", function(socket) {
 	});
 
 	socket.on("recordingsListRequest", function() {
-		logger.logInfo("User fetched recordings list: " + clientAddress);
+		logger.logInfo(clientAddress + " fetched recordings list");
 		streamer.sendRecordingsList(socket);
 	});
 
 	socket.on("recordingsRequest", function(data) {
-		logger.logInfo("User subscribed to recordings feed: " + clientAddress);
+		logger.logInfo(clientAddress + " requested recording: " + data);
 		streamer.sendRecording(socket, data);
 	});
 });

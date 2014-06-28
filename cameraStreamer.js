@@ -112,10 +112,28 @@ function sendRecordingsList(socket) {
 }
 exports.sendRecordingsList = sendRecordingsList;
 
-function sendRecordings(socket, data) {
-
+function sendRecording(socket, imagePath) {
+	fs.readdir(recordingsPath + imagePath, function(error, files) {
+		sendRecord(socket, imagePath, files, 0);
+	});
 }
-exports.sendRecordings = sendRecordings;
+exports.sendRecording = sendRecording;
+
+
+function sendRecord(socket, imagePath, imagesNames, iteration) {
+	if(imagesNames.length > iteration && socket.connected != false) {
+		console.log(recordingsPath + imagePath + "/" + imagesNames[iteration]);
+		fs.readFile(recordingsPath + imagePath + "/" + imagesNames[iteration], function(error, image) {
+			if(error) {
+				console.log(error);
+			}
+			socket.emit("image", image);
+			setTimeout(sendRecord, 1000, socket,imagePath, imagesNames, iteration + 1);
+		});
+	} else {
+		socket.emit("recordingFinished", []);
+	}
+}
 
 
 function padZeros(num, size) {
